@@ -12,11 +12,19 @@ class FastAligner:
         if not self.binary_path.exists():
             raise FileNotFoundError(f"fast_align binary not found at {self.binary_path}")
 
-    def align(self, sentence_pair: List[Tuple[str,str]], forward=True, score=False, quiet=True) -> str:
+    def align(self, sentence_pair: List[Tuple[str, str]], forward=True, score=False, quiet=True) -> str:
         with tempfile.NamedTemporaryFile(mode="w+", encoding="utf-8", delete=False) as tmp_file:
-            ss = ""
-            for s in sentence_pair:
-                ss += s[0] + " ||| " + s[1] + "\n"
+            try:
+                if not sentence_pair:
+                    return ""
+
+                ss = "\n".join(f"{src} ||| {tgt}" for src, tgt in sentence_pair)
+
+                if ss:
+                    ss += "\n"
+
+            except (IndexError, TypeError) as e:
+                raise ValueError(f"Invalid sentence pair format: {e}") from e
             tmp_file.write(ss.strip() + "\n")
             tmp_file.flush()
             input_path = tmp_file.name
