@@ -1,0 +1,3 @@
+[submodule "external/fast_align"]
+	path = external/fast_align
+	url = https://github.com/clab/fast_align.git

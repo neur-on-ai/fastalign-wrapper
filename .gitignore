@@ -1,0 +1,47 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# FastAlign build files
+external/fast_align/build/
+
+# CMake and Make artifacts
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+*.env
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+
+# Test / coverage
+.pytest_cache/
+coverage.*
+.cache/
+htmlcov/
+nosetests.xml
+test_output/
+
+# Logs
+*.log
+
+# macOS/Linux/Windows system files
+.DS_Store
+Thumbs.db
