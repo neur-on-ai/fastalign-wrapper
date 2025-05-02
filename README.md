@@ -28,7 +28,7 @@ from fastalign.aligner import FastAligner
 
 aligner = FastAligner()
 result = aligner.align([("the house", "la maison")])
-print(result)  # Output: "0-0 1-1"
+print(result)  # Output: "[{0: [0], 1: [1]}]"
 ````
 
 ## 📋 License
