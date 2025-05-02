@@ -77,15 +77,10 @@ def test_alignment_invalid_source():
 def test_alignment_invalid_target():
   aligner = FastAligner()
 
-  sentence_pair = [
-    ("hi i am here", " ")]
-  result = aligner.align(sentence_pair)
+  sentence_pair = [("hi i am here", " ")]
 
-  # Should still return a valid structure
-  assert isinstance(result, list)
-  assert len(result) == 1
-  assert isinstance(result[0], dict)
-  assert len(result[0]) == 0
+  with pytest.raises(ValueError):
+    aligner.align(sentence_pair)
 
 
 def test_alignment_multiple_invalid():
