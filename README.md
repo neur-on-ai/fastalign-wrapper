@@ -9,7 +9,7 @@ A Python wrapper around [fast_align](https://github.com/clab/fast_align) for wor
 
 - Python class `FastAligner` for easy access to fast_align
 - Automatically compiles `fast_align` during install using `CMake`
-- Uses `subprocess` internally and returns alignments as strings
+- Uses `subprocess` internally and returns alignments in a defined structure
 
 ---
 
